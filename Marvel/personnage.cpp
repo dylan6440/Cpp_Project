@@ -1,4 +1,6 @@
 #include "personnage.h"
+#include <QList>
+
 /**********************************************************************************/
 int Personnage::force() const
 {
@@ -75,6 +77,92 @@ int Personnage::totalAvecStyle()
 {
     m_totalAvecStyle = m_force + m_intelligence + m_agilite + m_magiePuissanceDeFeu + m_resistance + m_style;
     return m_totalAvecStyle;
+}
+/**********************************************************************************/
+void Personnage::ajoutCaracteristique(int faiblesse, int pointFort, int style)
+{
+    switch (faiblesse) {
+    case 0:
+        setForce(1);
+        break;
+    case 1:
+        setIntelligence(1);
+        break;
+    case 2:
+        setAgilite(1);
+        break;
+    case 3:
+        setMagiePuissanceDeFeu(1);
+        break;
+    case 4:
+        setResistance(1);
+        break;
+    }
+
+    switch (pointFort) {
+    case 0:
+        setForce(1);
+        break;
+    case 1:
+        setIntelligence(1);
+        break;
+    case 2:
+        setAgilite(1);
+        break;
+    case 3:
+        setMagiePuissanceDeFeu(1);
+        break;
+    case 4:
+        setResistance(1);
+        break;
+    }
+    setStyle(style);
+}
+/**********************************************************************************/
+int Personnage::faiblesse()
+{
+    int index;
+    int number = 100;
+
+    QList<int> liste = {m_force,
+                       m_intelligence,
+                       m_agilite,
+                       m_magiePuissanceDeFeu,
+                       m_resistance};
+
+    for(int i =0; i<liste.size();i++)
+    {
+        if (liste[i]< number)
+        {
+            number = liste[i];
+            index = i;
+        }
+
+    }
+    return index;
+}
+/**********************************************************************************/
+int Personnage::pointFort()
+{
+    int index;
+    int number = 0;
+
+    QList<int> liste = {m_force,
+                       m_intelligence,
+                       m_agilite,
+                       m_magiePuissanceDeFeu,
+                       m_resistance};
+
+    for(int i =0; i<liste.size();i++)
+    {
+        if (liste[i]> number)
+        {
+            number = liste[i];
+            index = i;
+        }
+
+    }
+    return index;
 }
 /**********************************************************************************/
 bool Personnage::triParTotalStyle(Personnage *p1, Personnage *p2)

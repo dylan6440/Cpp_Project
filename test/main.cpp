@@ -1,14 +1,25 @@
 #include "qstd.cpp"
+#include <QTextStream>
 
 int main()
 {
-    int size = 20;
-    int condi = 0;
-    while (condi < 100)
+
+    QList<int> liste = {8,9,2,5,6,0,8,9};
+    int index;
+    int number = 100;
+
+    for(int i =0; i<liste.size();i++)
     {
-        int num = 1+(qrand()%(size-1));
-        qstd::cout<<num<<" \n";
-        condi++;
+        if (liste[i]< number)
+        {
+            number = liste[i];
+            index = i;
+        }
+        qstd::cout<<liste[i]<<"\n";
+
     }
+
+    qstd::cout<<"Le nombre le plus petit est : "<<number<<" a l'index : "<<index<<".\n";
+
 
 }
