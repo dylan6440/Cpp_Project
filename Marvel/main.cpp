@@ -26,7 +26,7 @@ void test()
     pp1.ajoutePersonnage(&p8);
 
 
-    while(pp1.sizeList()>0)
+    while(pp1.m_population.size()>0)
     {
         qstd::cout<<"\nNouveau Combat ! \n";
         int commbattant = 0;
@@ -37,6 +37,27 @@ void test()
     qstd::cout<<"\nFin des Combat ! \n";
 
     pp1.listeVictoire();
+
+    pp1.preparationRoundSecondeChance();
+
+    while(pp1.m_populationSecondeChance.size()>0)
+    {
+        qstd::cout<<"\nNouveau Combat ! \n";
+        int commbattant = 0;
+        int adversaire = pp1.tirageAuSort();
+        pp1.combatListeSecondaire(pp1.m_populationSecondeChance[commbattant],pp1.m_populationSecondeChance[adversaire]);
+    }
+    pp1.listeVictoire();
+
+    pp1.preparationRoundSecondeChance();
+
+    while(pp1.m_population.size()>0)
+    {
+        qstd::cout<<"\nNouveau Combat ! \n";
+        int commbattant = 0;
+        int adversaire = pp1.tirageAuSort();
+        pp1.combat(pp1.m_population[commbattant],pp1.m_population[adversaire]);
+    }
 
 }
 

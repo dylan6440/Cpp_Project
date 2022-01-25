@@ -17,11 +17,13 @@ public:
     Population();
 
     void ajoutePersonnage(Personnage * personnage);
-    int sizeList();
+    int sizeList(QList<Personnage *> liste);
     void combat(Personnage *combattant, Personnage *adversaire);
+    void combatListeSecondaire(Personnage *combattant, Personnage *adversaire);
     int tirageAuSort();
     void listeVictoire();
     void ajoutCaracVictoire();
+    void preparationRoundSecondeChance();
 };
 
 #endif // POPULATION_H

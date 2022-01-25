@@ -15,9 +15,9 @@ void Population::ajoutePersonnage(Personnage *personnage)
     m_population.append(personnage);
 }
 /**********************************************************************************/
-int Population::sizeList()
+int Population::sizeList(QList<Personnage *> liste)
 {
-    return m_population.size();
+    return liste.size();
 }
 /**********************************************************************************/
 void Population::combat(Personnage *combattant, Personnage *adversaire)
@@ -177,5 +177,146 @@ void Population::listeVictoire()
     }
 }
 /**********************************************************************************/
+void Population::combatListeSecondaire(Personnage *combattant, Personnage *adversaire)
+{
+    // indice du combatant
+    int bufCombattant = 0;
+    // indice de l'adversaire
+    int bufCombattantAdversaire = 0;
 
+    QString res;
+    QTextStream buf(&res);
+    buf<<"Combant entre "<<combattant->nom()<<" et "<<adversaire->nom()<<" ! \n";
+
+    /************************************TEST FORCE**************************************/
+    if (combattant->force()>adversaire->force())
+    {
+        bufCombattant++;
+    }else if (combattant->force()<adversaire->force())
+    {
+        bufCombattantAdversaire++;
+    }
+    else
+    {
+        // Nothing
+    }
+    /************************************TEST INTELLIGENCE**************************************/
+    if (combattant->intelligence()>adversaire->intelligence())
+    {
+        bufCombattant++;
+    }else if (combattant->intelligence()<adversaire->intelligence())
+    {
+        bufCombattantAdversaire++;
+    }
+    else
+    {
+        // Nothing
+    }
+    /************************************TEST AGILITE**************************************/
+    if (combattant->agilite()>adversaire->agilite())
+    {
+        bufCombattant++;
+    }else if (combattant->agilite()<adversaire->agilite())
+    {
+        bufCombattantAdversaire++;
+    }
+    else
+    {
+        // Nothing
+    }
+    /************************************TEST MAGIE / PUISSANCE DE FEU**************************************/
+    if (combattant->magiePuissanceDeFeu()>adversaire->magiePuissanceDeFeu())
+    {
+        bufCombattant++;
+    }else if (combattant->magiePuissanceDeFeu()<adversaire->magiePuissanceDeFeu())
+    {
+        bufCombattantAdversaire++;
+    }
+    else
+    {
+        // Nothing
+    }
+    /************************************TEST RESISTANCE**************************************/
+    if (combattant->resistance()>adversaire->resistance())
+    {
+        bufCombattant++;
+    }else if (combattant->resistance()<adversaire->resistance())
+    {
+        bufCombattantAdversaire++;
+    }
+    else
+    {
+        // Nothing
+    }
+    /************************************FIN TEST**************************************/
+
+    if(bufCombattant > bufCombattantAdversaire)
+    {
+        buf<<"Le gagnat est :"<<combattant->nom()<<"\n";
+        combattant->ajoutCaracteristique(combattant->faiblesse(),adversaire->pointFort(),1);
+        m_populationVictoire.append(combattant);
+        m_populationDefaite.append(adversaire);
+        m_populationSecondeChance.removeOne(combattant);
+        m_populationSecondeChance.removeOne(adversaire);
+    }
+    else if(bufCombattant == bufCombattantAdversaire)
+    {
+        if (combattant->style()>adversaire->style())
+        {
+            buf<<"Le gagnat est :"<<combattant->nom()<<"\n";
+            combattant->ajoutCaracteristique(combattant->faiblesse(),adversaire->pointFort(),1);
+            m_populationVictoire.append(combattant);
+            m_populationDefaite.append(adversaire);
+            m_populationSecondeChance.removeOne(combattant);
+            m_populationSecondeChance.removeOne(adversaire);
+        }
+        else if (combattant->style()==adversaire->style())
+        {
+            if ((combattant->totalAvecStyle()>adversaire->totalAvecStyle()))
+            {
+                buf<<"Le gagnat est :"<<combattant->nom()<<"\n";
+                combattant->ajoutCaracteristique(combattant->faiblesse(),adversaire->pointFort(),1);
+                m_populationVictoire.append(combattant);
+                m_populationDefaite.append(adversaire);
+                m_populationSecondeChance.removeOne(combattant);
+                m_populationSecondeChance.removeOne(adversaire);
+            }
+            else {
+                buf<<"Le gagnat est :"<<adversaire->nom()<<"\n";
+                adversaire->ajoutCaracteristique(adversaire->faiblesse(),combattant->pointFort(),1);
+                m_populationDefaite.append(combattant);
+                m_populationVictoire.append(adversaire);
+                m_populationSecondeChance.removeOne(combattant);
+                m_populationSecondeChance.removeOne(adversaire);
+            }
+        }else {
+            buf<<"Le gagnat est :"<<adversaire->nom()<<"\n";
+            adversaire->ajoutCaracteristique(adversaire->faiblesse(),combattant->pointFort(),1);
+            m_populationDefaite.append(combattant);
+            m_populationVictoire.append(adversaire);
+            m_populationSecondeChance.removeOne(combattant);
+            m_populationSecondeChance.removeOne(adversaire);
+        }
+
+    }else {
+        buf<<"Le gagnat est :"<<adversaire->nom()<<"\n";
+        adversaire->ajoutCaracteristique(adversaire->faiblesse(),combattant->pointFort(),1);
+        m_populationDefaite.append(combattant);
+        m_populationVictoire.append(adversaire);
+        m_populationSecondeChance.removeOne(combattant);
+        m_populationSecondeChance.removeOne(adversaire);
+    }
+
+    qstd::cout<<res;
+
+
+}
+/**********************************************************************************/
+void Population::preparationRoundSecondeChance()
+{
+    m_population = m_population + m_populationVictoire;
+    m_populationSecondeChance = m_populationDefaite;
+    m_populationDefaite = {};
+    m_populationVictoire = {};
+}
 /**********************************************************************************/
