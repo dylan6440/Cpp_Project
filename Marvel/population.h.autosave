@@ -18,7 +18,6 @@ public:
 
     void combat();
     int tirageAuSort(int size);
-    bool victoireCombat(int resultat, int resultatAdversaire);
 
 };
 

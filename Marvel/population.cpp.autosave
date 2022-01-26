@@ -89,7 +89,7 @@ void Population::combat()
     }
     /************************************FIN TEST**************************************/
 
-    if (victoireCombat(bufCombattant, bufCombattantAdversaire))
+    if(bufCombattant > bufCombattantAdversaire)
     {
         buf<<"Le gagnat est :"<<m_population[combattantId]->nom()<<"\n";
         m_populationVictoire.append(m_population[combattantId]);
@@ -97,8 +97,42 @@ void Population::combat()
         m_population.removeAt(combattantId);
         m_population.removeAt(combattantAdversaireId);
     }
-    else
+    else if(bufCombattant == bufCombattantAdversaire)
     {
+        if (m_population[combattantId]->style()>m_population[combattantAdversaireId]->style())
+        {
+            buf<<"Le gagnat est :"<<m_population[combattantId]->nom()<<"\n";
+            m_populationVictoire.append(m_population[combattantId]);
+            m_populationDefaite.append(m_population[combattantAdversaireId]);
+            m_population.removeAt(combattantId);
+            m_population.removeAt(combattantAdversaireId);
+        }
+        else if (m_population[combattantId]->style()==m_population[combattantAdversaireId]->style())
+        {
+            if ((m_population[combattantId]->totalAvecStyle()>m_population[combattantAdversaireId]->totalAvecStyle()))
+            {
+                buf<<"Le gagnat est :"<<m_population[combattantId]->nom()<<"\n";
+                m_populationVictoire.append(m_population[combattantId]);
+                m_populationDefaite.append(m_population[combattantAdversaireId]);
+                m_population.removeAt(combattantId);
+                m_population.removeAt(combattantAdversaireId);
+            }
+            else {
+                buf<<"Le gagnat est :"<<m_population[combattantAdversaireId]->nom()<<"\n";
+                m_populationDefaite.append(m_population[combattantId]);
+                m_populationVictoire.append(m_population[combattantAdversaireId]);
+                m_population.removeAt(combattantId);
+                m_population.removeAt(combattantAdversaireId);
+            }
+        }else {
+            buf<<"Le gagnat est :"<<m_population[combattantAdversaireId]->nom()<<"\n";
+            m_populationDefaite.append(m_population[combattantId]);
+            m_populationVictoire.append(m_population[combattantAdversaireId]);
+            m_population.removeAt(combattantId);
+            m_population.removeAt(combattantAdversaireId);
+        }
+
+    }else {
         buf<<"Le gagnat est :"<<m_population[combattantAdversaireId]->nom()<<"\n";
         m_populationDefaite.append(m_population[combattantId]);
         m_populationVictoire.append(m_population[combattantAdversaireId]);
@@ -109,38 +143,6 @@ void Population::combat()
     qstd::cout<<res;
 
 
-}
-/**********************************************************************************/
-bool Population::victoireCombat(int bufCombattant, int bufCombattantAdversaire)
-{
-    bool res;
-    if(bufCombattant > bufCombattantAdversaire)
-    {
-        res = true;
-    }
-    else if(bufCombattant == bufCombattantAdversaire)
-    {
-        if (m_population[combattantId]->style()>m_population[combattantAdversaireId]->style())
-        {
-            res = true;
-        }
-        else if (m_population[combattantId]->style()==m_population[combattantAdversaireId]->style())
-        {
-            if ((m_population[combattantId]->totalAvecStyle()>m_population[combattantAdversaireId]->totalAvecStyle()))
-            {
-                res = true;
-            }
-            else {
-                res = false;
-            }
-        }else {
-            res = false;
-        }
-
-    }else {
-        res = false;
-    }
-    return res;
 }
 /**********************************************************************************/
 int Population::tirageAuSort(int size)
