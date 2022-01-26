@@ -6,20 +6,25 @@
 
 class Population
 {
-private:
+
+public:
+
     QList<Personnage *> m_population;
+    QList<Personnage *> m_populationSecondeChance;
     QList<Personnage *> m_populationVictoire;
     QList<Personnage *> m_populationDefaite;
 
-public:
     Population();
 
     void ajoutePersonnage(Personnage * personnage);
 
-    void combat();
-    int tirageAuSort(int size);
-    bool victoireCombat(int resultat, int resultatAdversaire);
-
+    int sizeList(QList<Personnage *> liste);
+    void combat(Personnage *combattant, Personnage *adversaire);
+    void combatListeSecondaire(Personnage *combattant, Personnage *adversaire);
+    int tirageAuSort();
+    void listeVictoire();
+    void ajoutCaracVictoire();
+    void preparationRoundSecondeChance();
 };
 
 #endif // POPULATION_H

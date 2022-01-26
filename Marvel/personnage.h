@@ -7,6 +7,7 @@
 class Personnage
 {
 private:
+    QString m_nom;
     int m_force;
     int m_intelligence;
     int m_agilite;
@@ -15,7 +16,6 @@ private:
     int m_style;
     int m_total;
     int m_totalAvecStyle;
-    QString m_nom;
 
 public:
 
@@ -46,6 +46,11 @@ public:
 
     int total() ;
     int totalAvecStyle() ;
+
+    void ajoutCaracteristique(int faiblesse,int pointFort, int style);
+
+    int faiblesse();
+    int pointFort();
 
     static bool triParTotalStyle(Personnage *p1, Personnage *p2);
 
