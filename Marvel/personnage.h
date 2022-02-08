@@ -16,6 +16,7 @@ private:
     int m_style;
     int m_total;
     int m_totalAvecStyle;
+    int m_victoire = 0;
 
 public:
 
@@ -42,6 +43,9 @@ public:
     int style() const;
     void setStyle(int style);
     QString nom() const;
+    void setVictoire(int victoire);
+
+    QString competence(int index);
 
 
     int total() ;
@@ -54,6 +58,7 @@ public:
 
     static bool triParTotalStyle(Personnage *p1, Personnage *p2);
 
+    int victoire() const;
 };
 
 #endif // PERSONNAGE_H

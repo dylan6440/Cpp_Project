@@ -2,6 +2,16 @@
 #include <QList>
 
 /**********************************************************************************/
+void Personnage::setVictoire(int victoire)
+{
+    m_victoire = m_victoire + victoire;
+}
+
+int Personnage::victoire() const
+{
+    return m_victoire;
+}
+
 int Personnage::force() const
 {
     return m_force;
@@ -65,6 +75,30 @@ void Personnage::setStyle(int style)
 QString Personnage::nom() const
 {
     return m_nom;
+}
+/**********************************************************************************/
+QString Personnage::competence(int index)
+{
+    QString res;
+    switch (index) {
+    case 0:
+        res = "Force";;
+        break;
+    case 1:
+        res = "Intelligence";
+        break;
+    case 2:
+        res = "Agilite";
+        break;
+    case 3:
+        res = "Magie / Puissance de Feu";
+        break;
+    case 4:
+        res = "Resistance";
+        break;
+    }
+
+    return res;
 }
 /**********************************************************************************/
 int Personnage::total()
