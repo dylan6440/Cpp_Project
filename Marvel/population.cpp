@@ -163,15 +163,13 @@ void Population::combat(Personnage *combattant, Personnage *adversaire)
     }
 
     qstd::cout<<res;
-
-
 }
 /**********************************************************************************/
 int Population::tirageAuSort(QList<Personnage *> liste)
 {
     srand(time(NULL));
-    int nombre(0);
-    nombre = 1+(rand()%(liste.size()-1));
+    int nombre;
+    nombre = 1+(qrand()%(liste.size()-1));
     return nombre;
 }
 /**********************************************************************************/
@@ -360,7 +358,7 @@ void Population::combatListeSecondaire(Personnage *combattant, Personnage *adver
         m_populationSecondeChance.removeOne(adversaire);
     }
 
-    qstd::cout<<res;
+    //qstd::cout<<res;
 
 
 }
@@ -388,6 +386,31 @@ void Population::supressionDeListe()
     m_populationDefaite = {};
     m_populationVictoire = {};
     m_populationSecondeChance = {};
+}
+/**********************************************************************************/
+void Population::eventAleatoire()
+{
+    srand(time(NULL));
+    int nombre= qrand() % 2;
+    int nombreCarac = qrand() % 4;
+    int indexPersonnage = tirageAuSort(m_population);
+
+    if (nombre == 0)
+    {
+        if (nombreCarac != 0)
+        {
+            nombreCarac = nombreCarac - (nombreCarac*2);
+        }
+
+    }
+
+    qstd::cout<<"--EVENT ALEA-- "<<m_population[indexPersonnage]->nom()<<" a "<<nombreCarac<<" sur toutes ces caractéristique\n";
+    m_population[indexPersonnage]->setAgilite(nombreCarac);
+    m_population[indexPersonnage]->setForce(nombreCarac);
+    m_population[indexPersonnage]->setIntelligence(nombreCarac);
+    m_population[indexPersonnage]->setMagiePuissanceDeFeu(nombreCarac);
+    m_population[indexPersonnage]->setResistance(nombreCarac);
+    m_population[indexPersonnage]->setStyle(nombreCarac);
 }
 /**********************************************************************************/
 void Population::alpha()

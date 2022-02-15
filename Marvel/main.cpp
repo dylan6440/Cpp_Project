@@ -26,11 +26,12 @@ void combatListePrincipale(Population pp1, QList<Personnage *> liste)
     }
 }
 /**********************************************************************************/
-
-/**********************************************************************************/
 QString generation(Population pp1)
 {
+     qstd::cout<<"\n------------------------------------------------------\n";
     std::random_shuffle(pp1.m_population.begin(),pp1.m_population.end());
+     qstd::cout<<"\n------------------------------------------------------\n";
+    pp1.eventAleatoire();
     // premier round liste principale 20 perso
     qstd::cout<<"\n------------------------------------------------------\n";
     while(pp1.m_population.size()>0)
@@ -44,7 +45,7 @@ QString generation(Population pp1)
 
     qstd::cout<<"\nFin des Combat ! \n";
 
-    pp1.listeVictoire();
+    //pp1.listeVictoire();
 
     pp1.preparationRoundSecondeChance();
 
@@ -59,7 +60,7 @@ QString generation(Population pp1)
         qstd::cout<<"\n------------------------------------------------------\n";
     }
 
-    pp1.listeVictoire();
+    //pp1.listeVictoire();
 
     // mettre les vainqueure dans la liste secondaire
     pp1.preparationRound();
@@ -89,7 +90,7 @@ QString generation(Population pp1)
     }
     // il en reste 1
 
-    pp1.listeVictoire();
+    //pp1.listeVictoire();
     pp1.preparationRound();
 
     qstd::cout<<"\n------------------------------------------------------\n";
@@ -102,7 +103,7 @@ QString generation(Population pp1)
         qstd::cout<<"\n------------------------------------------------------\n";
     }
 
-    pp1.listeVictoire();
+    //pp1.listeVictoire();
 
     pp1.supressionDeListe();
 
@@ -116,7 +117,7 @@ QString generation(Population pp1)
         qstd::cout<<"\n------------------------------------------------------\n";
     }
 
-    pp1.listeVictoire();
+    //pp1.listeVictoire();
 
 
     pp1.preparationRoundSecondeChance();
@@ -134,7 +135,7 @@ QString generation(Population pp1)
         qstd::cout<<"\n------------------------------------------------------\n";
     }
 
-    pp1.listeVictoire();
+    //pp1.listeVictoire();
 
     pp1.supressionDeListe();
 
@@ -148,7 +149,7 @@ QString generation(Population pp1)
         qstd::cout<<"\n------------------------------------------------------\n";
     }
 
-    pp1.listeVictoire();
+    //pp1.listeVictoire();
 
     pp1.supressionDeListe();
 
@@ -162,7 +163,7 @@ QString generation(Population pp1)
         qstd::cout<<"\n------------------------------------------------------\n";
     }
 
-    pp1.listeVictoire();
+    //pp1.listeVictoire();
 
     pp1.supressionDeListe();
 
@@ -228,10 +229,10 @@ int main()
         pp1.ajoutePersonnage(&p20);
 
 
-        for(int i = 1; i < 10000; i++)
+        for(int i = 0; i < 2; i++)
         {
-            pp1.m_populationAlpha += generation(pp1);
             qstd::cout<<"-----------------------"<<i<<" Generation------------------"<<"\n";
+            pp1.m_populationAlpha += generation(pp1);
             pp1.listeToString(pp1.m_population);
         }
 

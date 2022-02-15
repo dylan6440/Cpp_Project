@@ -29,6 +29,7 @@ public:
     void preparationRoundSecondeChance();
     void preparationRound();
     void supressionDeListe();
+    void eventAleatoire();
 
     void alpha();
 
