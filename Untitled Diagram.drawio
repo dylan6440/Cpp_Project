@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2022-02-28T15:12:31.115Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="nuvRiMhf69aDSkxa0MnE" version="16.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-28T20:20:35.850Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="FsKOVyOUlWqFaYHOWEeJ" version="16.6.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2009" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2249" dy="737" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="zkfFHV4jXpPFQw0GAbJ--0" value="Personage" style="swimlane;fontStyle=2;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="-90" y="130" width="400" height="532" as="geometry">
+          <mxGeometry x="-270" y="100" width="400" height="532" as="geometry">
             <mxRectangle x="150" y="130" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -15,22 +15,22 @@
         <mxCell id="zkfFHV4jXpPFQw0GAbJ--4" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="zkfFHV4jXpPFQw0GAbJ--0" vertex="1">
           <mxGeometry y="180" width="400" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="VFwz7rrpXML6c6ZxlJ4m-30" value="+ force() const : int&#xa;+ setForce(int force) : void&#xa;+ intelligence() const : int&#xa;+ setIntelligence(int intelligence) : void&#xa;+ agilite() const: int&#xa;+ setAgilite(int agilite) : void&#xa;+ magiePuissanceDeFeu() const : void&#xa;+ setMagiePuissanceDeFeu(int magiePuissanceDeFeu) : void&#xa;+ resistance() const : int&#xa;+ setResistance(int resistance) : void&#xa;+ style() const : int&#xa;+ setStyle(int style) : void&#xa;+ nom() const : QString &#xa;+ setVictoire(int victoire) : void &#xa;+ total()  : int &#xa;+ totalAvecStyle()  : int &#xa;+ competence(int index) : QString &#xa;+ ajoutCaracteristique(int faiblesse,int pointFort, int style) : void &#xa;+ faiblesse() : int &#xa;+ pointFort() : int &#xa;+ triParTotalStyle(Personnage *p1, Personnage *p2) : static bool&#xa;+ victoire() const : int " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="zkfFHV4jXpPFQw0GAbJ--0">
+        <mxCell id="VFwz7rrpXML6c6ZxlJ4m-30" value="+ force() const : int&#xa;+ setForce(int force) : void&#xa;+ intelligence() const : int&#xa;+ setIntelligence(int intelligence) : void&#xa;+ agilite() const: int&#xa;+ setAgilite(int agilite) : void&#xa;+ magiePuissanceDeFeu() const : void&#xa;+ setMagiePuissanceDeFeu(int magiePuissanceDeFeu) : void&#xa;+ resistance() const : int&#xa;+ setResistance(int resistance) : void&#xa;+ style() const : int&#xa;+ setStyle(int style) : void&#xa;+ nom() const : QString &#xa;+ setVictoire(int victoire) : void &#xa;+ total()  : int &#xa;+ totalAvecStyle()  : int &#xa;+ competence(int index) : QString &#xa;+ ajoutCaracteristique(int faiblesse,int pointFort, int style) : void &#xa;+ faiblesse() : int &#xa;+ pointFort() : int &#xa;+ triParTotalStyle(Personnage *p1, Personnage *p2) : static bool&#xa;+ victoire() const : int " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="zkfFHV4jXpPFQw0GAbJ--0" vertex="1">
           <mxGeometry y="200" width="400" height="332" as="geometry" />
         </mxCell>
         <mxCell id="zkfFHV4jXpPFQw0GAbJ--17" value="Population" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="400" y="120" width="430" height="400" as="geometry">
+          <mxGeometry x="400" y="120" width="490" height="380" as="geometry">
             <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="zkfFHV4jXpPFQw0GAbJ--18" value="+ m_population : QList&lt;Personnage *&gt;&#xa;+ m_populationSecondeChance : QList&lt;Personnage *&gt;&#xa;+ m_populationVictoire : QList&lt;Personnage *&gt;&#xa;+ m_populationDefaite : QList&lt;Personnage *&gt;&#xa;+ m_populationTampon : QList&lt;Personnage *&gt;&#xa;+ m_populationAlpha : QList &lt;QString&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="zkfFHV4jXpPFQw0GAbJ--17" vertex="1">
-          <mxGeometry y="26" width="430" height="114" as="geometry" />
+          <mxGeometry y="26" width="490" height="114" as="geometry" />
         </mxCell>
         <mxCell id="zkfFHV4jXpPFQw0GAbJ--23" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="zkfFHV4jXpPFQw0GAbJ--17" vertex="1">
-          <mxGeometry y="140" width="430" height="8" as="geometry" />
+          <mxGeometry y="140" width="490" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="zkfFHV4jXpPFQw0GAbJ--25" value="+ ajoutePersonnage(Personnage * personnage) : void&#xa;+ sizeList(QList&lt;Personnage *&gt; liste) : int&#xa;+ combat(Personnage *combattant, Personnage *adversaire) : void&#xa;+ combatListeSecondaire(Personnage *combattant, Personnage&#xa;*adversaire) : void&#xa;+ tirageAuSort(QList&lt;Personnage *&gt; liste) : int&#xa;+ listeVictoire() : void&#xa;+ listeToString(QList &lt;Personnage *&gt; liste) : void&#xa;+ ajoutCarac(QList&lt;Personnage *&gt; liste) : void&#xa;+ preparationRoundSecondeChance() : void&#xa;+ preparationRound() : void&#xa;+ supressionDeListe() : void&#xa;+ alpha() : void&#xa;+ supressionDuPlusFaible(QList&lt;Personnage *&gt; liste) : QList&lt;Personnage *&gt;&#xa;+ Vainqueur() : QString" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="zkfFHV4jXpPFQw0GAbJ--17" vertex="1">
-          <mxGeometry y="148" width="430" height="242" as="geometry" />
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--25" value="+ ajoutePersonnage(Personnage * personnage) : void&#xa;+ sizeList(QList&lt;Personnage *&gt; liste) : int&#xa;+ combat(Personnage *combattant, Personnage *adversaire) : void&#xa;+ combatListeSecondaire(Personnage *combattant, Personnage *adversaire) : void&#xa;+ tirageAuSort(QList&lt;Personnage *&gt; liste) : int&#xa;+ listeVictoire() : void&#xa;+ listeToString(QList &lt;Personnage *&gt; liste) : void&#xa;+ ajoutCarac(QList&lt;Personnage *&gt; liste) : void&#xa;+ preparationRoundSecondeChance() : void&#xa;+ preparationRound() : void&#xa;+ supressionDeListe() : void&#xa;+ eventAleatoire() : void&#xa;+ alpha() : void&#xa;+ supressionDuPlusFaible(QList&lt;Personnage *&gt; liste) : QList&lt;Personnage *&gt;&#xa;+ Vainqueur() : QString" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="zkfFHV4jXpPFQw0GAbJ--17" vertex="1">
+          <mxGeometry y="148" width="490" height="232" as="geometry" />
         </mxCell>
         <mxCell id="zkfFHV4jXpPFQw0GAbJ--26" value="" style="endArrow=open;shadow=0;strokeWidth=1;rounded=0;endFill=1;edgeStyle=elbowEdgeStyle;elbow=vertical;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zkfFHV4jXpPFQw0GAbJ--0" target="zkfFHV4jXpPFQw0GAbJ--17" edge="1">
           <mxGeometry x="0.5" y="41" relative="1" as="geometry">
