@@ -358,7 +358,7 @@ void Population::combatListeSecondaire(Personnage *combattant, Personnage *adver
         m_populationSecondeChance.removeOne(adversaire);
     }
 
-    qstd::cout<<res;
+    //qstd::cout<<res;
 
 
 }
